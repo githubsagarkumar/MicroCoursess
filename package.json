@@ -1,0 +1,19 @@
+{
+  "name": "skillion",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install-all": "npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client start\"",
+    "build": "npm --prefix client run build",
+    "setup-db": "node server/setup.js",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
